@@ -13,12 +13,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import javax.swing.*;
 
 public class GmailSignInTest {
-    final String pass = JOptionPane.showInputDialog(JOptionPane.getRootFrame(),
-            "Enter the gmail password", null, JOptionPane.PLAIN_MESSAGE);
+//    final String pass = JOptionPane.showInputDialog(JOptionPane.getRootFrame(),
+//            "Enter the gmail password", null, JOptionPane.PLAIN_MESSAGE);
     WebDriver driver = new FirefoxDriver();
     WebDriverWait wait = new WebDriverWait(driver, 30);
 
-
+//Second Test
     @Test
     public void gmailLoginShouldBeSuccessful() {
         //WebDriverWait wait = new WebDriverWait(driver,30);
@@ -35,7 +35,7 @@ public class GmailSignInTest {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("Passwd")));
         WebElement passwordTextBox = driver.findElement(By.id("Passwd"));
         passwordTextBox.clear();
-        passwordTextBox.sendKeys(pass);
+        passwordTextBox.sendKeys("arcinfo23!");
         // Uncheck 'Stay Signed In'
         WebElement staySignedInCheckbox = driver.findElement(By.id("PersistentCookie"));
         String staySignedInCheckedAttribute = staySignedInCheckbox.getAttribute("checked");
@@ -80,7 +80,7 @@ public class GmailSignInTest {
         //wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("Passwd")));
         WebElement passwordTextBox = WaitAndFindID("Passwd");    //driver.findElement(By.id("Passwd"));
         passwordTextBox.clear();
-        passwordTextBox.sendKeys(pass);
+        passwordTextBox.sendKeys("arcinfo23!");
         // Uncheck 'Stay Signed In'
         WebElement staySignedInCheckbox = driver.findElement(By.id("PersistentCookie"));
         String staySignedInCheckedAttribute = staySignedInCheckbox.getAttribute("checked");
